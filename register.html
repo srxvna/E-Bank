@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BCA E-Bank</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<style>
+		body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    }
+
+    .container {
+        max-width: 450px;
+        padding: 4% 4% 4%;
+        margin: 50px auto;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(to right, #0053ba, #00addb);
+        color: #fff;
+        text-align: center;
+        font-family: 'San Francisco', Arial, sans-serif;
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    form {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input, select {
+        margin: 5px;
+        padding: 8px 12px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        color: #333;
+        width: 100%;
+    }
+
+    input:focus {
+        background-color: #fff;
+        outline: none;
+    }
+
+    .button {
+        width: 150px;
+        margin: 10px;
+        padding: 10px;
+        font-weight: bold;
+        background-color: #fff;
+        border: none;
+        border-radius: 4px;
+        color: #0066cc;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover,
+    .button:focus {
+        background-color: #007bff;
+        color: #fff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .form-group input, select {
+        flex: 1;
+        width: 48%;
+    }
+
+    .form-group:last-child input {
+        width: 100%;
+    }
+
+
+        .show-password {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .show-password input[type="checkbox"] {
+            margin-right: 5px;
+        }
+	</style>
+    <div class="container">
+        <h2>Register Page</h2>
+        <a href="index.php">Click Here to Go Back.</a><br/>
+
+        <form action="register.php" method="POST">
+            <div class="form-group">
+                <input type="text" name="firstName" placeholder="First Name" required="required"/>
+                <input type="text" name="lastName" placeholder="Last Name" required="required"/>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" required="required"/>
+                <input type="email" name="email" placeholder="Email" required="required"/>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required="required" minlength="8"/>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" required="required"/>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="accountNumber" placeholder="Account Number (8 digits)" required="required" pattern="\d{8}" title="Please enter an 8-digit number"/>
+                <select name="accountType" required="required">
+                    <option value="" disabled selected>Select Account Type</option>
+                    <option value="current">Current Account</option>
+                    <option value="savings">Savings Account</option>
+                </select>
+            </div>
+
+             <div class="show-password">
+                <input type="checkbox" id="showPassword"> Show Password
+            </div>
+
+            <input type="submit" value="Register" class="button"/>
+        </form>
+    </div>
+
+     <script>
+    const showPasswordCheckbox = document.getElementById("showPassword");
+    const passwordField = document.querySelector('input[name="password"]');
+    const confirmPasswordField = document.querySelector('input[name="confirmPassword"]');
+
+    showPasswordCheckbox.addEventListener("change", function () {
+        if (showPasswordCheckbox.checked) {
+            passwordField.type = "text";
+            confirmPasswordField.type = "text";
+        } else {
+            passwordField.type = "password";
+            confirmPasswordField.type = "password";
+        }
+    });
+</script>
+
+    
+</body>
+</html>
+
