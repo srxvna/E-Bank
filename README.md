@@ -10,6 +10,7 @@ Steps:
 8. Click on Import.
 9. Open a new tab and go to URL “http://localhost/E-Bank”
 
+10.
 Admin Credentials:
 username: admin
 password: adminsk
